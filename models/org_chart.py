@@ -20,7 +20,7 @@ class OrgChart(SQLModel, table=True):
         description="The unique identifier for the organization."
     )
     name: str = Field(..., description="The name of the organization.")
-    employees: List["Employee"] = Relationship(
+    employee: List["Employee"] = Relationship(
         back_populates="org_chart",
         cascade_delete=True,
     )
